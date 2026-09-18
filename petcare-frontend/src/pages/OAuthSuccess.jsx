@@ -57,10 +57,54 @@ function OAuthSuccess() {
   }, [navigate]);
 
   return (
-    <div className="page-container">
-      <h2>Google Login</h2>
-      <p>Completing Google login...</p>
+
+    <div className="oauth-loading-page">
+
+      <div className="oauth-loading-card">
+
+        <div className="oauth-logo">
+          <span>🐾</span>
+          PETCARE
+        </div>
+
+        <div className="oauth-loader">
+          <div className="oauth-loader-paw">
+            🐾
+          </div>
+        </div>
+
+        <h2>
+          Signing you in
+        </h2>
+
+        <p>
+          We're securely completing your Google login.
+        </p>
+
+        <div className="oauth-progress">
+
+          <div className="oauth-progress-step active">
+            <span>✓</span>
+            Google authentication
+          </div>
+
+          <div className="oauth-progress-line"></div>
+
+          <div className="oauth-progress-step">
+            <span>2</span>
+            Loading PetCare
+          </div>
+
+        </div>
+
+        <small>
+          Please wait. You will be redirected automatically.
+        </small>
+
+      </div>
+
     </div>
+
   );
 }
 

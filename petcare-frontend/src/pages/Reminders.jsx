@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import PetCareLayout from "../components/PetCareLayout";
 import { getPet } from "../services/petService";
 
 import {
@@ -178,36 +178,162 @@ function Reminders() {
   };
 
   return (
-    <div className="page-container">
+	<PetCareLayout>
 
-      <div className="page-header">
+	    <div className="modern-page">
 
-        <div>
-          <h1>Pet Care Reminders</h1>
+		<div className="modern-page-header">
 
-          <p>
-            {pet
-              ? `Manage reminders for ${pet.name}.`
-              : "Manage pet care reminders."}
-          </p>
-        </div>
+		  <div>
 
-        <Link
-          to="/pets"
-          className="back-link"
-        >
-          Back to My Pets
-        </Link>
+		    <span className="page-eyebrow">
+		      PET CARE SCHEDULE
+		    </span>
 
-      </div>
+		    <h1>
+		     Pet Care Reminders 🔔
+		    </h1>
 
-      <div className="record-form-card">
+		    <p>
+		      {pet
+		        ? `Manage important care reminders for ${pet.name}.`
+		        : "Manage important pet care reminders."}
+		    </p>
 
-        <h2>
-          {editingId
-            ? "Edit Reminder"
-            : "Add Reminder"}
-        </h2>
+		  </div>
+
+		  <Link
+		    to="/pets"
+		    className="modern-back-button reminder-back-button"
+		  >
+		    ← My Pets
+		  </Link>
+
+		</div>
+		
+		{pet && (
+
+		  <div className="reminder-pet-banner">
+
+		    <div className="reminder-pet-avatar">
+
+		      {pet.imageUrl ? (
+
+		        <img
+		          src={pet.imageUrl}
+		          alt={pet.name}
+		        />
+
+		      ) : (
+
+		        <span>🐾</span>
+
+		      )}
+
+		    </div>
+
+		    <div>
+
+		      <span className="reminder-banner-label">
+		        CARE REMINDERS FOR
+		      </span>
+
+		      <h3>
+		        {pet.name}
+		      </h3>
+
+		      <p>
+		        {pet.breed || pet.species || "Pet"}
+		      </p>
+
+		    </div>
+
+		    <div className="reminder-total">
+
+		      <strong>
+		        {reminders.length}
+		      </strong>
+
+		      <span>
+		        Reminders
+		      </span>
+
+		    </div>
+
+		  </div>
+
+		)}
+		
+		<div className="reminder-summary-row">
+
+		  <div className="reminder-mini-summary active-reminder-summary">
+
+		    <span>🔔</span>
+
+		    <div>
+		      <strong>
+		        {
+		          reminders.filter(
+		            reminder => !reminder.completed
+		          ).length
+		        }
+		      </strong>
+
+		      <small>
+		        Active
+		      </small>
+		    </div>
+
+		  </div>
+
+
+		  <div className="reminder-mini-summary completed-reminder-summary">
+
+		    <span>✓</span>
+
+		    <div>
+		      <strong>
+		        {
+		          reminders.filter(
+		            reminder => reminder.completed
+		          ).length
+		        }
+		      </strong>
+
+		      <small>
+		        Completed
+		      </small>
+		    </div>
+
+		  </div>
+
+		</div>
+
+		<div className="record-form-card modern-reminder-form">
+
+		  <div className="modern-card-heading">
+
+		    <div className="modern-card-icon reminder-form-icon">
+		      {editingId ? "✏️" : "🔔"}
+		    </div>
+
+		    <div>
+
+		      <h2>
+		        {editingId
+		          ? "Edit Reminder"
+		          : "Add Care Reminder"}
+		      </h2>
+
+		      <p>
+		        {editingId
+		          ? "Update this care reminder."
+		          : "Create a reminder for your pet's care schedule."}
+		      </p>
+
+		    </div>
+
+		  </div>
 
         <form
           className="record-form"
@@ -321,11 +447,14 @@ function Reminders() {
 
           <div className="form-buttons full-width">
 
-            <button type="submit">
-              {editingId
-                ? "Update Reminder"
-                : "Add Reminder"}
-            </button>
+		  <button
+		    type="submit"
+		    className="reminder-submit-button"
+		  >
+		    {editingId
+		      ? "✓ Update Reminder"
+		      : "🔔 Add Reminder"}
+		  </button>
 
             {editingId && (
               <button
@@ -355,9 +484,31 @@ function Reminders() {
 
       </div>
 
-      <h2 className="section-title">
-        Reminder List
-      </h2>
+	  <div className="records-section-heading">
+
+	    <div>
+
+	      <span className="page-eyebrow">
+	        CARE SCHEDULE
+	      </span>
+
+	      <h2>
+	        Your Reminders
+	      </h2>
+
+	    </div>
+
+	    <span className="reminder-count-badge">
+
+	      {reminders.length}{" "}
+
+	      {reminders.length === 1
+	        ? "reminder"
+	        : "reminders"}
+
+	    </span>
+
+	  </div>
 
       {reminders.length === 0 ? (
 
@@ -369,30 +520,108 @@ function Reminders() {
 
         <div className="records-grid">
 
-          {reminders.map((reminder) => (
+		{reminders.map((reminder) => (
 
-            <div
-              className="record-card"
-              key={reminder.id}
-            >
+		  <div
+		    className={
+		      `record-card modern-reminder-card ${
+		        reminder.completed
+		          ? "reminder-card-completed"
+		          : ""
+		      }`
+		    }
+		    key={reminder.id}
+		  >
 
-              <h3>{reminder.title}</h3>
+		    <div className="reminder-card-top">
 
-              <p>
-                <strong>Type:</strong>{" "}
-                {reminder.reminderType}
-              </p>
+		      <div
+		        className={
+		          `reminder-icon-large ${
+		            reminder.completed
+		              ? "completed-icon"
+		              : ""
+		          }`
+		        }
+		      >
+		        {reminder.completed ? "✓" : "🔔"}
+		      </div>
 
-              <p>
-                <strong>Date:</strong>{" "}
-                {reminder.reminderDate}
-              </p>
 
-              <p>
-                <strong>Time:</strong>{" "}
-                {reminder.reminderTime ||
-                  "Not provided"}
-              </p>
+		      <div className="reminder-title-area">
+
+		        <span className="reminder-small-label">
+		          {reminder.reminderType || "PET CARE"}
+		        </span>
+
+		        <h3>
+		          {reminder.title}
+		        </h3>
+
+		      </div>
+
+
+		      <span
+		        className={
+		          reminder.completed
+		            ? "reminder-status completed"
+		            : "reminder-status active"
+		        }
+		      >
+		        {reminder.completed
+		          ? "COMPLETED"
+		          : "ACTIVE"}
+		      </span>
+
+		    </div>
+
+			<div className="reminder-detail">
+
+			  <span>📅</span>
+
+			  <div>
+
+			    <small>REMINDER DATE</small>
+
+			    <strong>
+			      {reminder.reminderDate || "No date"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="reminder-detail">
+
+			  <span>🕐</span>
+
+			  <div>
+
+			    <small>REMINDER TIME</small>
+
+			    <strong>
+			      {reminder.reminderTime || "No time"}
+			    </strong>
+
+			  </div>
+
+			</div>
+			
+			<div className="reminder-detail">
+
+			  <span>🏷️</span>
+
+			  <div>
+
+			    <small>REMINDER TYPE</small>
+
+			    <strong>
+			      {reminder.reminderType || "General"}
+			    </strong>
+
+			  </div>
+
+			</div>
 
               <p>
                 <strong>Status:</strong>{" "}
@@ -437,6 +666,7 @@ function Reminders() {
       )}
 
     </div>
+	</PetCareLayout>
   );
 }
 

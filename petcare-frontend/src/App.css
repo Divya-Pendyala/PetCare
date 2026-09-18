@@ -690,3 +690,3959 @@ button {
 .google-login-button:hover {
   opacity: 0.85;
 }
+
+/* ==========================================
+   NEW PETCARE DASHBOARD
+   ========================================== */
+
+.petcare-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #fffaf5;
+}
+
+
+/* SIDEBAR */
+
+.petcare-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #4a0707;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+
+.petcare-logo {
+  font-size: 27px;
+  font-weight: 900;
+  margin-bottom: 45px;
+  text-align: center;
+  color: white;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-item {
+  color: white;
+  text-decoration: none;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-item.active {
+  background: #ff7300;
+  color: white;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-theme {
+  margin-top: 5px;
+}
+
+.sidebar-theme .theme-toggle {
+  width: 100%;
+}
+
+.sidebar-logout {
+  width: 100%;
+  border: none;
+  padding: 13px 16px;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sidebar-logout:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* MAIN AREA */
+
+.petcare-main {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 45px 40px;
+  box-sizing: border-box;
+}
+
+
+/* WELCOME AREA */
+
+.dashboard-welcome {
+  margin-bottom: 35px;
+}
+
+.dashboard-welcome h1 {
+  color: #ff7300;
+  font-size: 38px;
+  margin: 5px 0;
+  font-weight: 900;
+}
+
+.dashboard-welcome > p:last-child {
+  color: #666;
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.welcome-small {
+  color: #4a0707;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+
+/* SUMMARY CARDS */
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  padding: 25px;
+  min-height: 155px;
+  border-radius: 22px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.summary-card p {
+  margin: 12px 0 5px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.summary-card h2 {
+  font-size: 42px;
+  margin: 0 0 5px;
+}
+
+.summary-card span {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.summary-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.pets-summary {
+  background: #e3c5ff;
+  color: #552080;
+}
+
+.appointment-summary {
+  background: #ffa34c;
+  color: #4a0707;
+}
+
+.vaccine-summary {
+  background: #f2add8;
+  color: #64256a;
+}
+
+.reminder-summary {
+  background: #c8e57d;
+  color: #304d1e;
+}
+
+
+/* LOWER PANELS */
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 22px;
+}
+
+.dashboard-panel {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.panel-heading a {
+  color: #ff7300;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+
+/* EMPTY PET AREA */
+
+.empty-dashboard-data {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff6e9;
+  border-radius: 15px;
+  font-size: 35px;
+}
+
+.empty-dashboard-data h3 {
+  font-size: 20px;
+  margin: 12px 0 5px;
+}
+
+.empty-dashboard-data p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.dashboard-action-button {
+  display: inline-block;
+  background: #ff7300;
+  color: white;
+  padding: 11px 20px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  background: #fff7ef;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+}
+
+.quick-action:hover {
+  transform: translateX(4px);
+  background: #ffead5;
+}
+
+.quick-action > span {
+  font-size: 27px;
+}
+
+.quick-action strong {
+  font-size: 15px;
+}
+
+.quick-action p {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #777;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .petcare-sidebar {
+    width: 75px;
+    padding: 25px 8px;
+  }
+
+  .petcare-logo {
+    font-size: 0;
+  }
+
+  .petcare-logo::after {
+    content: "🐾";
+    font-size: 30px;
+  }
+
+  .sidebar-item {
+    font-size: 0;
+    text-align: center;
+  }
+
+  .sidebar-item::first-letter {
+    font-size: 20px;
+  }
+
+  .petcare-main {
+    margin-left: 75px;
+    width: calc(100% - 75px);
+    padding: 25px 15px;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 27px;
+  }
+}
+
+/* ==========================================
+   DASHBOARD REAL DATA
+   ========================================== */
+
+
+/* MAIN CONTENT GRID */
+
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+
+/* PET LIST */
+
+.dashboard-pet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dashboard-pet-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff7ef;
+  padding: 14px;
+  border-radius: 15px;
+  transition: 0.2s;
+}
+
+.dashboard-pet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.07);
+}
+
+
+/* PET IMAGE */
+
+.dashboard-pet-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #ffd6ad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dashboard-pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dashboard-pet-image span {
+  font-size: 25px;
+}
+
+
+/* PET INFORMATION */
+
+.dashboard-pet-info {
+  flex: 1;
+}
+
+.dashboard-pet-info h3 {
+  margin: 0 0 3px;
+  font-size: 17px;
+}
+
+.dashboard-pet-info p {
+  margin: 0 0 3px;
+  color: #555;
+  font-size: 14px;
+}
+
+.dashboard-pet-info small {
+  color: #888;
+}
+
+
+/* PET QUICK BUTTONS */
+
+.pet-quick-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.pet-quick-buttons a {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.pet-quick-buttons a:hover {
+  transform: scale(1.1);
+  background: #ffe0c2;
+}
+
+
+/* ==========================================
+   APPOINTMENTS
+   ========================================== */
+
+.dashboard-appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-appointment {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  background: #f8f3ff;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+}
+
+.dashboard-appointment:hover {
+  transform: translateX(3px);
+  background: #eee2ff;
+}
+
+
+/* DATE BOX */
+
+.appointment-date-box {
+  width: 48px;
+  height: 52px;
+  border-radius: 12px;
+  background: #5c2380;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.appointment-date-box strong {
+  font-size: 19px;
+}
+
+.appointment-date-box span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+
+/* APPOINTMENT INFORMATION */
+
+.appointment-dashboard-info {
+  flex: 1;
+}
+
+.appointment-dashboard-info strong {
+  font-size: 15px;
+}
+
+.appointment-dashboard-info p {
+  margin: 3px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.appointment-dashboard-info small {
+  color: #888;
+  font-size: 11px;
+}
+
+
+/* ==========================================
+   REMINDERS
+   ========================================== */
+
+.reminder-panel {
+  margin-bottom: 25px;
+}
+
+.dashboard-reminder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.dashboard-reminder {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #f3f9df;
+  padding: 15px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+}
+
+.dashboard-reminder:hover {
+  transform: translateY(-2px);
+  background: #e7f2bd;
+}
+
+.reminder-icon {
+  width: 42px;
+  height: 42px;
+  background: #c8e57d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-reminder p {
+  margin: 3px 0;
+  color: #555;
+  font-size: 13px;
+}
+
+.dashboard-reminder small {
+  color: #888;
+}
+
+
+/* ==========================================
+   LOADING / EMPTY / ERROR
+   ========================================== */
+
+.dashboard-loading {
+  background: white;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-error {
+  background: #ffe3e3;
+  color: #a00000;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.small-empty-message {
+  padding: 35px 15px;
+  text-align: center;
+  color: #777;
+}
+
+.small-empty-message span {
+  font-size: 32px;
+}
+
+.small-empty-message p {
+  margin-top: 8px;
+}
+
+
+/* ==========================================
+   RESPONSIVE REAL DATA
+   ========================================== */
+
+@media (max-width: 1000px) {
+
+  .dashboard-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-reminder-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .pet-quick-buttons {
+    display: none;
+  }
+
+}
+
+/* ==========================================
+   SHARED PETCARE LAYOUT
+   ========================================== */
+
+.layout-logo {
+  display: block;
+  text-decoration: none;
+}
+
+.sidebar-care-title {
+  margin: 28px 16px 10px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.sidebar-care-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.sidebar-care-info span {
+  font-size: 16px;
+}
+
+.sidebar-care-info p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.sidebar-user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ff7300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.sidebar-user strong {
+  display: block;
+  font-size: 12px;
+}
+
+.sidebar-user small {
+  display: block;
+  font-size: 9px;
+  opacity: 0.6;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================
+   MODERN INNER PAGES
+   ========================================== */
+
+.modern-page {
+  width: 100%;
+}
+
+.modern-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.modern-page-header h1 {
+  margin: 4px 0 5px;
+  font-size: 38px;
+  color: #ff7300;
+}
+
+.modern-page-header p {
+  margin: 0;
+  color: #777;
+}
+
+.page-eyebrow {
+  color: #4a0707;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+
+/* PET COUNT */
+
+.pet-count-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #e3c5ff;
+  padding: 13px 22px;
+  border-radius: 16px;
+  color: #552080;
+}
+
+.pet-count-badge > span {
+  font-size: 28px;
+}
+
+.pet-count-badge strong {
+  display: block;
+  font-size: 25px;
+}
+
+.pet-count-badge small {
+  display: block;
+}
+
+
+/* FORM */
+
+.modern-form-card {
+  background: #fff4e6;
+  border-radius: 22px;
+  padding: 25px;
+  margin-bottom: 32px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.modern-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.modern-card-heading h2 {
+  margin: 0;
+}
+
+.modern-card-heading p {
+  margin: 4px 0 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.modern-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #ff9b3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+}
+
+
+/* PET SECTION */
+
+.pets-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 25px 0 15px;
+}
+
+.pets-section-heading h2 {
+  margin: 4px 0 0;
+  font-size: 27px;
+}
+
+.pets-result-count {
+  background: #c8e57d;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* MODERN PET CARD */
+
+.modern-pet-card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  transition: 0.2s;
+}
+
+.modern-pet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+.modern-pet-image {
+  height: 170px;
+  margin: -20px -20px 18px;
+  background: #f5d6bb;
+  overflow: hidden;
+}
+
+.modern-pet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modern-pet-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+  .modern-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modern-page-header h1 {
+    font-size: 29px;
+  }
+
+}
+
+/* ==========================================
+   MODERN APPOINTMENTS PAGE
+   ========================================== */
+
+.modern-back-button {
+  background: #4a0707;
+  color: white;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.modern-back-button:hover {
+  background: #ff7300;
+}
+
+
+/* PET BANNER */
+
+.appointment-pet-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  background: linear-gradient(
+    110deg,
+    #ffe1bd,
+    #fff3df
+  );
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.appointment-pet-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.appointment-pet-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.appointment-pet-avatar span {
+  font-size: 27px;
+}
+
+.pet-banner-label {
+  display: block;
+  color: #9b5b20;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.appointment-pet-banner h3 {
+  margin: 3px 0;
+  font-size: 20px;
+}
+
+.appointment-pet-banner p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.appointment-total {
+  margin-left: auto;
+  text-align: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 13px;
+}
+
+.appointment-total strong {
+  display: block;
+  color: #ff7300;
+  font-size: 25px;
+}
+
+.appointment-total span {
+  font-size: 10px;
+  color: #777;
+}
+
+
+/* FORM */
+
+.modern-appointment-form {
+  border: none;
+  border-radius: 22px;
+  background: #fff4e6;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-form-icon {
+  background: #ff9c45;
+}
+
+.appointment-submit-button {
+  background: #ff7300;
+  border: none;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.appointment-submit-button:hover {
+  background: #e86600;
+}
+
+
+/* RECORD HEADING */
+
+.records-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 32px 0 16px;
+}
+
+.records-section-heading h2 {
+  margin: 4px 0 0;
+  font-size: 27px;
+}
+
+.appointment-count-badge {
+  background: #ffd5ac;
+  color: #7a3d00;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* APPOINTMENT CARD */
+
+.modern-appointment-card {
+  border: none;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.modern-appointment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.large-appointment-date {
+  width: 62px;
+  height: 67px;
+  background: #ff8a20;
+  color: white;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.large-appointment-date strong {
+  font-size: 25px;
+  line-height: 25px;
+}
+
+.large-appointment-date span {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.appointment-title-area {
+  flex: 1;
+}
+
+.appointment-title-area h3 {
+  margin: 0 0 7px;
+}
+
+
+/* STATUS */
+
+.appointment-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.appointment-status.scheduled {
+  background: #e3c5ff;
+  color: #552080;
+}
+
+.appointment-status.completed {
+  background: #c8e57d;
+  color: #36551e;
+}
+
+.appointment-status.cancelled {
+  background: #ffd1d1;
+  color: #9a2626;
+}
+
+
+/* DETAILS */
+
+.appointment-detail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.appointment-detail > span {
+  width: 30px;
+  font-size: 19px;
+}
+
+.appointment-detail small {
+  display: block;
+  color: #999;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.appointment-detail strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .appointment-pet-banner {
+    flex-wrap: wrap;
+  }
+
+  .appointment-total {
+    margin-left: 0;
+  }
+
+  .records-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
+
+/* ==========================================
+   MODERN VACCINATIONS PAGE
+   ========================================== */
+
+
+/* PET BANNER */
+
+.vaccination-pet-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+
+  background: linear-gradient(
+    110deg,
+    #f3d4ff,
+    #ffe4f4
+  );
+
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+
+.vaccination-pet-avatar {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+
+.vaccination-pet-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.vaccination-pet-avatar span {
+  font-size: 27px;
+}
+
+
+.vaccination-banner-label {
+  display: block;
+
+  color: #7a387d;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.vaccination-pet-banner h3 {
+  margin: 3px 0;
+  font-size: 20px;
+}
+
+
+.vaccination-pet-banner p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* TOTAL */
+
+.vaccination-total {
+  margin-left: auto;
+
+  text-align: center;
+
+  background: white;
+
+  padding: 10px 20px;
+
+  border-radius: 13px;
+}
+
+
+.vaccination-total strong {
+  display: block;
+
+  color: #a63b91;
+
+  font-size: 25px;
+}
+
+
+.vaccination-total span {
+  font-size: 10px;
+  color: #777;
+}
+
+
+/* FORM */
+
+.modern-vaccination-form {
+
+  border: none;
+
+  border-radius: 22px;
+
+  background: #fff0f8;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.vaccination-form-icon {
+  background: #e6a4d4;
+}
+
+
+.vaccination-submit-button {
+
+  background: #a8499a;
+
+  border: none;
+
+  color: white;
+
+  border-radius: 9px;
+
+  padding: 12px 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+.vaccination-submit-button:hover {
+  background: #913b84;
+}
+
+
+/* COUNT */
+
+.vaccination-count-badge {
+
+  background: #f2add8;
+
+  color: #64256a;
+
+  padding: 7px 14px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* VACCINATION CARD */
+
+.modern-vaccination-card {
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: white;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+
+  overflow: hidden;
+
+  transition: 0.2s;
+}
+
+
+.modern-vaccination-card:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+/* CARD TOP */
+
+.vaccination-card-top {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+
+.vaccine-icon-large {
+
+  width: 60px;
+  height: 60px;
+
+  border-radius: 16px;
+
+  background: #f2add8;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 27px;
+
+  flex-shrink: 0;
+}
+
+
+.vaccination-title-area {
+  flex: 1;
+}
+
+
+.vaccination-title-area h3 {
+
+  margin: 3px 0 0;
+
+  font-size: 19px;
+}
+
+
+.vaccination-small-label {
+
+  color: #a8499a;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* DETAILS */
+
+.vaccination-detail {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 10px 0;
+
+  border-bottom:
+    1px solid #f2edf1;
+}
+
+
+.vaccination-detail > span {
+
+  width: 30px;
+
+  font-size: 19px;
+}
+
+
+.vaccination-detail small {
+
+  display: block;
+
+  color: #999;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+.vaccination-detail strong {
+
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 13px;
+}
+
+
+/* DUE DATE */
+
+.due-date-detail {
+
+  background: #fff8fc;
+
+  margin-left: -8px;
+
+  margin-right: -8px;
+
+  padding-left: 8px;
+
+  padding-right: 8px;
+
+  border-radius: 8px;
+}
+
+
+/* BACK BUTTON */
+
+.vaccination-back-button:hover {
+  background: #a8499a;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .vaccination-pet-banner {
+    flex-wrap: wrap;
+  }
+
+  .vaccination-total {
+    margin-left: 0;
+  }
+
+}
+
+/* ==========================================
+   MODERN HEALTH RECORDS PAGE
+   ========================================== */
+
+
+/* PET BANNER */
+
+.health-pet-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  background: linear-gradient(
+    110deg,
+    #dcefb2,
+    #f2f8df
+  );
+  border-radius: 20px;
+  margin-bottom: 22px;
+}
+
+.health-pet-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.health-pet-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.health-pet-avatar span {
+  font-size: 27px;
+}
+
+.health-banner-label {
+  display: block;
+  color: #56732e;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.health-pet-banner h3 {
+  margin: 3px 0;
+  font-size: 20px;
+}
+
+.health-pet-banner p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* TOTAL */
+
+.health-total {
+  margin-left: auto;
+  text-align: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 13px;
+}
+
+.health-total strong {
+  display: block;
+  color: #62823a;
+  font-size: 25px;
+}
+
+.health-total span {
+  font-size: 10px;
+  color: #777;
+}
+
+
+/* FORM */
+
+.modern-health-form {
+  border: none;
+  border-radius: 22px;
+  background: #f5fae9;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.health-form-icon {
+  background: #c8e57d;
+}
+
+.health-submit-button {
+  background: #668b38;
+  border: none;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.health-submit-button:hover {
+  background: #52752b;
+}
+
+
+/* COUNT */
+
+.health-count-badge {
+  background: #c8e57d;
+  color: #36551e;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* HEALTH CARD */
+
+.modern-health-card {
+  border: none;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.modern-health-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+/* CARD HEADER */
+
+.health-card-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.health-icon-large {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: #c8e57d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 27px;
+  flex-shrink: 0;
+}
+
+.health-title-area {
+  flex: 1;
+}
+
+.health-small-label {
+  color: #62823a;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.health-title-area h3 {
+  margin: 3px 0 5px;
+  font-size: 19px;
+}
+
+.health-record-date {
+  display: inline-block;
+  font-size: 11px;
+  color: #777;
+}
+
+
+/* DETAILS */
+
+.health-detail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2e5;
+}
+
+.health-detail > span {
+  width: 30px;
+  font-size: 19px;
+}
+
+.health-detail small {
+  display: block;
+  color: #999;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+.health-detail strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.medication-detail {
+  background: #f8fceF;
+  margin-left: -8px;
+  margin-right: -8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 8px;
+}
+
+
+/* BACK BUTTON */
+
+.health-back-button:hover {
+  background: #668b38;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .health-pet-banner {
+    flex-wrap: wrap;
+  }
+
+  .health-total {
+    margin-left: 0;
+  }
+
+}
+
+/* ==========================================
+   MODERN REMINDERS PAGE
+   ========================================== */
+
+
+/* PET BANNER */
+
+.reminder-pet-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 22px;
+  background: linear-gradient(
+    110deg,
+    #e8dcff,
+    #f6f0ff
+  );
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+
+.reminder-pet-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.reminder-pet-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.reminder-pet-avatar span {
+  font-size: 27px;
+}
+
+
+.reminder-banner-label {
+  display: block;
+  color: #65468c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+
+.reminder-pet-banner h3 {
+  margin: 3px 0;
+  font-size: 20px;
+}
+
+
+.reminder-pet-banner p {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+
+.reminder-total {
+  margin-left: auto;
+  text-align: center;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 13px;
+}
+
+
+.reminder-total strong {
+  display: block;
+  color: #7048a0;
+  font-size: 25px;
+}
+
+
+.reminder-total span {
+  font-size: 10px;
+  color: #777;
+}
+
+
+/* SUMMARY */
+
+.reminder-summary-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+
+.reminder-mini-summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 17px;
+  border-radius: 14px;
+}
+
+
+.reminder-mini-summary > span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+
+.reminder-mini-summary strong {
+  display: block;
+  font-size: 20px;
+}
+
+
+.reminder-mini-summary small {
+  color: #666;
+}
+
+
+.active-reminder-summary {
+  background: #e3c5ff;
+}
+
+
+.completed-reminder-summary {
+  background: #c8e57d;
+}
+
+
+/* FORM */
+
+.modern-reminder-form {
+  border: none;
+  border-radius: 22px;
+  background: #f7f1ff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.reminder-form-icon {
+  background: #d9b6ff;
+}
+
+
+.reminder-submit-button {
+  background: #7048a0;
+  border: none;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.reminder-submit-button:hover {
+  background: #5c3889;
+}
+
+
+/* COUNT */
+
+.reminder-count-badge {
+  background: #e3c5ff;
+  color: #552080;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* CARD */
+
+.modern-reminder-card {
+  border: none;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+
+.modern-reminder-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.1);
+}
+
+
+.reminder-card-completed {
+  opacity: 0.8;
+}
+
+
+/* CARD HEADER */
+
+.reminder-card-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+
+.reminder-icon-large {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #e3c5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  flex-shrink: 0;
+}
+
+
+.reminder-icon-large.completed-icon {
+  background: #c8e57d;
+  color: #36551e;
+  font-weight: 800;
+}
+
+
+.reminder-title-area {
+  flex: 1;
+}
+
+
+.reminder-small-label {
+  color: #7048a0;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+.reminder-title-area h3 {
+  margin: 3px 0 0;
+  font-size: 18px;
+}
+
+
+/* STATUS */
+
+.reminder-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+
+.reminder-status.active {
+  background: #e3c5ff;
+  color: #552080;
+}
+
+
+.reminder-status.completed {
+  background: #c8e57d;
+  color: #36551e;
+}
+
+
+/* DETAILS */
+
+.reminder-detail {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ebf5;
+}
+
+
+.reminder-detail > span {
+  width: 30px;
+  font-size: 19px;
+}
+
+
+.reminder-detail small {
+  display: block;
+  color: #999;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+
+.reminder-detail strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+
+/* BACK */
+
+.reminder-back-button:hover {
+  background: #7048a0;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .reminder-pet-banner {
+    flex-wrap: wrap;
+  }
+
+  .reminder-total {
+    margin-left: 0;
+  }
+
+  .reminder-summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-card-top {
+    flex-wrap: wrap;
+  }
+
+}
+
+/* ==========================================
+   MODERN PROFILE PAGE
+   ========================================== */
+
+.modern-profile-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+
+/* PROFILE PREVIEW */
+
+.modern-profile-preview {
+  position: relative;
+  background: white;
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 0 24px 25px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.profile-cover {
+  height: 105px;
+  margin: 0 -24px;
+  background: linear-gradient(
+    120deg,
+    #4a0707,
+    #8c3218,
+    #ff7300
+  );
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 15px;
+}
+
+.profile-cover span {
+  font-size: 28px;
+  opacity: 0.7;
+}
+
+
+/* PROFILE PHOTO */
+
+.modern-profile-photo {
+  width: 105px;
+  height: 105px;
+  margin: -52px auto 13px;
+  border-radius: 50%;
+  border: 5px solid white;
+  background: #f3d7c3;
+  overflow: hidden;
+  position: relative;
+}
+
+.modern-profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modern-profile-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #ff9b3d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.modern-profile-preview h2 {
+  margin: 7px 0 3px;
+  font-size: 22px;
+}
+
+.profile-email {
+  margin: 0 0 12px;
+  color: #777;
+  font-size: 12px;
+}
+
+.profile-member-badge {
+  display: inline-block;
+  background: #fff0df;
+  color: #9b4b00;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ACCOUNT INFORMATION */
+
+.profile-info-divider {
+  height: 1px;
+  background: #eeeeee;
+  margin: 22px 0 12px;
+}
+
+.profile-info-row {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.profile-info-row > span {
+  width: 35px;
+  height: 35px;
+  background: #fff2e4;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info-row small {
+  display: block;
+  color: #999;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.profile-info-row strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+
+/* PROFILE FORM */
+
+.modern-profile-form-card {
+  background: #fff8f1;
+  border: none;
+  border-radius: 22px;
+  padding: 27px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form-icon {
+  background: #ffad61;
+}
+
+.profile-field {
+  margin-bottom: 20px;
+}
+
+.profile-field label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.profile-field input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-field-help {
+  display: block;
+  margin-top: 6px;
+  color: #888;
+  font-size: 10px;
+}
+
+.profile-field-warning {
+  display: block;
+  margin-top: 6px;
+  color: #a05b19;
+  font-size: 10px;
+}
+
+
+/* BUTTON */
+
+.profile-submit-button {
+  width: 100%;
+  background: #ff7300;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.profile-submit-button:hover {
+  background: #df6500;
+  transform: translateY(-1px);
+}
+
+.profile-back-button:hover {
+  background: #ff7300;
+}
+
+
+/* LOADING */
+
+.profile-loading {
+  text-align: center;
+  background: white;
+  padding: 60px 20px;
+  border-radius: 22px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.profile-loading-icon {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 13px;
+  border-radius: 50%;
+  background: #ffd5ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 29px;
+}
+
+.profile-loading h3 {
+  margin-bottom: 5px;
+}
+
+.profile-loading p {
+  color: #777;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+  .modern-profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-profile-preview {
+    max-width: none;
+  }
+
+}
+
+/* ==========================================
+   FINAL SIDEBAR IMPROVEMENTS
+   ========================================== */
+
+.sidebar-care-menu {
+  margin-top: 0;
+}
+
+.sidebar-nav-icon {
+  width: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-item.active {
+  background: #ff7300;
+  color: white;
+}
+
+.sidebar-item.active:hover {
+  background: #ff7300;
+}
+
+.sidebar-care-menu .sidebar-item {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sidebar-care-menu .sidebar-item:hover {
+  color: white;
+}
+
+.sidebar-care-menu .sidebar-item.active {
+  color: white;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* THEME BUTTON INSIDE SIDEBAR */
+
+.sidebar-theme .theme-toggle {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.sidebar-theme .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* USER INFORMATION */
+
+.sidebar-user-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.sidebar-user-details strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-details small {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================
+   FINAL SIDEBAR IMPROVEMENTS
+   ========================================== */
+
+.sidebar-care-menu {
+  margin-top: 0;
+}
+
+.sidebar-nav-icon {
+  width: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-item.active {
+  background: #ff7300;
+  color: white;
+}
+
+.sidebar-item.active:hover {
+  background: #ff7300;
+}
+
+.sidebar-care-menu .sidebar-item {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.sidebar-care-menu .sidebar-item:hover {
+  color: white;
+}
+
+.sidebar-care-menu .sidebar-item.active {
+  color: white;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* THEME BUTTON INSIDE SIDEBAR */
+
+.sidebar-theme .theme-toggle {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+}
+
+.sidebar-theme .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+
+/* USER INFORMATION */
+
+.sidebar-user-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.sidebar-user-details strong {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-details small {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* GENERAL CARDS */
+
+[data-theme="dark"] .record-card,
+[data-theme="dark"] .modern-pet-card,
+[data-theme="dark"] .modern-appointment-card,
+[data-theme="dark"] .modern-vaccination-card,
+[data-theme="dark"] .modern-health-card,
+[data-theme="dark"] .modern-reminder-card {
+  background: #242424;
+  color: #f4f4f4;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .record-card h3,
+[data-theme="dark"] .modern-pet-card h3,
+[data-theme="dark"] .modern-appointment-card h3,
+[data-theme="dark"] .modern-vaccination-card h3,
+[data-theme="dark"] .modern-health-card h3,
+[data-theme="dark"] .modern-reminder-card h3 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .record-card p {
+  color: #cccccc;
+}
+
+[data-theme="dark"] .empty-message {
+  background: #242424;
+  color: #bbbbbb;
+}
+
+/* FORMS */
+
+[data-theme="dark"] .record-form-card,
+[data-theme="dark"] .modern-appointment-form,
+[data-theme="dark"] .modern-vaccination-form,
+[data-theme="dark"] .modern-health-form,
+[data-theme="dark"] .modern-reminder-form,
+[data-theme="dark"] .modern-profile-form-card {
+  background: #242424;
+  color: #f5f5f5;
+}
+
+[data-theme="dark"] .modern-card-heading h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .modern-card-heading p {
+  color: #aaaaaa;
+}
+
+[data-theme="dark"] label {
+  color: #dddddd;
+}
+
+/* INPUTS */
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background: #303030;
+  color: #ffffff;
+  border-color: #505050;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #888888;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: #ff7300;
+  outline: none;
+}
+
+[data-theme="dark"] select option {
+  background: #303030;
+  color: white;
+}
+
+/* APPOINTMENTS */
+
+[data-theme="dark"] .appointment-pet-banner {
+  background: linear-gradient(
+    110deg,
+    #4b3020,
+    #35271f
+  );
+}
+
+[data-theme="dark"] .appointment-pet-avatar,
+[data-theme="dark"] .appointment-total {
+  background: #242424;
+}
+
+[data-theme="dark"] .appointment-pet-banner h3 {
+  color: white;
+}
+
+[data-theme="dark"] .appointment-pet-banner p,
+[data-theme="dark"] .appointment-total span {
+  color: #bbbbbb;
+}
+
+[data-theme="dark"] .appointment-detail {
+  border-bottom-color: #3b3b3b;
+}
+
+[data-theme="dark"] .appointment-detail small {
+  color: #999999;
+}
+
+[data-theme="dark"] .appointment-detail strong {
+  color: #eeeeee;
+}
+
+/* VACCINATIONS */
+
+[data-theme="dark"] .vaccination-pet-banner {
+  background: linear-gradient(
+    110deg,
+    #3d2942,
+    #33252f
+  );
+}
+
+[data-theme="dark"] .vaccination-pet-avatar,
+[data-theme="dark"] .vaccination-total {
+  background: #242424;
+}
+
+[data-theme="dark"] .vaccination-pet-banner h3 {
+  color: white;
+}
+
+[data-theme="dark"] .vaccination-pet-banner p,
+[data-theme="dark"] .vaccination-total span {
+  color: #bbbbbb;
+}
+
+[data-theme="dark"] .vaccination-detail {
+  border-bottom-color: #3b3b3b;
+}
+
+[data-theme="dark"] .vaccination-detail strong {
+  color: #eeeeee;
+}
+
+[data-theme="dark"] .due-date-detail {
+  background: #2c242a;
+}
+
+/* HEALTH RECORDS */
+
+[data-theme="dark"] .health-pet-banner {
+  background: linear-gradient(
+    110deg,
+    #304027,
+    #293226
+  );
+}
+
+[data-theme="dark"] .health-pet-avatar,
+[data-theme="dark"] .health-total {
+  background: #242424;
+}
+
+[data-theme="dark"] .health-pet-banner h3 {
+  color: white;
+}
+
+[data-theme="dark"] .health-pet-banner p,
+[data-theme="dark"] .health-total span {
+  color: #bbbbbb;
+}
+
+[data-theme="dark"] .health-detail {
+  border-bottom-color: #3b3b3b;
+}
+
+[data-theme="dark"] .health-detail strong {
+  color: #eeeeee;
+}
+
+[data-theme="dark"] .medication-detail {
+  background: #283025;
+}
+
+[data-theme="dark"] .health-record-date {
+  color: #bbbbbb;
+}
+
+/* REMINDERS */
+
+[data-theme="dark"] .reminder-pet-banner {
+  background: linear-gradient(
+    110deg,
+    #352b45,
+    #2d2935
+  );
+}
+
+[data-theme="dark"] .reminder-pet-avatar,
+[data-theme="dark"] .reminder-total {
+  background: #242424;
+}
+
+[data-theme="dark"] .reminder-pet-banner h3 {
+  color: white;
+}
+
+[data-theme="dark"] .reminder-pet-banner p,
+[data-theme="dark"] .reminder-total span {
+  color: #bbbbbb;
+}
+
+[data-theme="dark"] .reminder-detail {
+  border-bottom-color: #3b3b3b;
+}
+
+[data-theme="dark"] .reminder-detail strong {
+  color: #eeeeee;
+}
+
+[data-theme="dark"] .active-reminder-summary {
+  background: #403252;
+}
+
+[data-theme="dark"] .completed-reminder-summary {
+  background: #344326;
+}
+
+[data-theme="dark"] .reminder-mini-summary strong {
+  color: white;
+}
+
+[data-theme="dark"] .reminder-mini-summary small {
+  color: #cccccc;
+}
+
+[data-theme="dark"] .reminder-card-completed {
+  background: #20251e;
+}
+
+/* PROFILE */
+
+[data-theme="dark"] .modern-profile-preview,
+[data-theme="dark"] .modern-profile-form-card,
+[data-theme="dark"] .profile-loading {
+  background: #242424;
+  color: #f5f5f5;
+}
+
+[data-theme="dark"] .modern-profile-preview h2 {
+  color: white;
+}
+
+[data-theme="dark"] .profile-email {
+  color: #bbbbbb;
+}
+
+[data-theme="dark"] .modern-profile-photo {
+  border-color: #242424;
+}
+
+[data-theme="dark"] .profile-info-divider {
+  background: #444444;
+}
+
+[data-theme="dark"] .profile-info-row {
+  border-bottom-color: #3b3b3b;
+}
+
+[data-theme="dark"] .profile-info-row > span {
+  background: #3b3028;
+}
+
+[data-theme="dark"] .profile-info-row strong {
+  color: #eeeeee;
+}
+
+[data-theme="dark"] .profile-field-help {
+  color: #aaaaaa;
+}
+
+[data-theme="dark"] .profile-field-warning {
+  color: #ffb567;
+}
+
+[data-theme="dark"] .profile-loading p {
+  color: #aaaaaa;
+}
+
+/* HEADINGS */
+
+[data-theme="dark"] .records-section-heading h2,
+[data-theme="dark"] .section-title {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .appointment-title-area h3,
+[data-theme="dark"] .vaccination-title-area h3,
+[data-theme="dark"] .health-title-area h3,
+[data-theme="dark"] .reminder-title-area h3 {
+  color: #ffffff;
+}
+
+/* SIDEBAR IN DARK MODE */
+
+[data-theme="dark"] .petcare-sidebar {
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .sidebar-item.active {
+  background: #ff7300;
+  color: white;
+}
+
+/* ==========================================
+   MODERN PETCARE LOGIN
+   ========================================== */
+
+.modern-auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  background: #fffaf5;
+  position: relative;
+}
+
+
+/* ==========================================
+   LEFT BRAND PANEL
+   ========================================== */
+
+.auth-brand-panel {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      #350404 0%,
+      #4a0707 45%,
+      #68120b 100%
+    );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 65px;
+  box-sizing: border-box;
+}
+
+.auth-brand-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+}
+
+.auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.auth-logo-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #ff7300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+
+/* BRAND MESSAGE */
+
+.auth-brand-message {
+  margin-top: 65px;
+}
+
+.auth-brand-eyebrow {
+  color: #ffad61;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.auth-brand-message h1 {
+  margin: 12px 0 18px;
+  color: white;
+  font-size: clamp(38px, 4vw, 57px);
+  line-height: 1.04;
+  letter-spacing: -2px;
+}
+
+.auth-brand-message h1 span {
+  color: #ff8a20;
+}
+
+.auth-brand-message p {
+  max-width: 430px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* FEATURE LIST */
+
+.auth-feature-list {
+  margin-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 13px;
+}
+
+.auth-feature-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(255, 115, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.auth-feature-item strong {
+  display: block;
+  color: white;
+  font-size: 11px;
+}
+
+.auth-feature-item span {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 8px;
+  line-height: 1.4;
+}
+
+
+/* DECORATIVE PAWS */
+
+.auth-decoration {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.035);
+  font-size: 160px;
+  transform: rotate(-20deg);
+  user-select: none;
+}
+
+.auth-decoration-one {
+  right: -30px;
+  top: 80px;
+}
+
+.auth-decoration-two {
+  left: -30px;
+  bottom: -25px;
+  transform: rotate(25deg);
+}
+
+/* ==========================================
+   LOGIN FORM SIDE
+   ========================================== */
+
+.auth-form-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 55px;
+  box-sizing: border-box;
+}
+
+.modern-login-card {
+  width: 100%;
+  max-width: 440px;
+}
+
+.mobile-auth-logo {
+  display: none;
+}
+
+
+/* FORM HEADING */
+
+.auth-form-heading {
+  margin-bottom: 30px;
+}
+
+.auth-form-eyebrow {
+  color: #ff7300;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.auth-form-heading h2 {
+  margin: 7px 0 7px;
+  color: #281b18;
+  font-size: 34px;
+  letter-spacing: -0.8px;
+}
+
+.auth-form-heading p {
+  margin: 0;
+  color: #837875;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* LOGIN FORM */
+
+.modern-login-form {
+  display: block;
+}
+
+.modern-auth-field {
+  margin-bottom: 18px;
+}
+
+.modern-auth-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #493d39;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.auth-input-wrapper {
+  position: relative;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.auth-input-wrapper input {
+  width: 100%;
+  height: 49px;
+  box-sizing: border-box;
+  padding: 0 15px 0 46px;
+  border: 1px solid #e3d9d4;
+  border-radius: 11px;
+  background: white;
+  color: #302522;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.auth-input-wrapper input::placeholder {
+  color: #aaa19d;
+}
+
+.auth-input-wrapper input:focus {
+  outline: none;
+  border-color: #ff7300;
+  box-shadow: 0 0 0 3px rgba(255, 115, 0, 0.1);
+}
+
+
+/* LOGIN BUTTON */
+
+.modern-login-button {
+  width: 100%;
+  height: 49px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 11px;
+  background: #ff7300;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.2s;
+}
+
+.modern-login-button:hover {
+  background: #e86700;
+  transform: translateY(-1px);
+}
+
+.modern-login-button span {
+  font-size: 17px;
+}
+
+
+/* LOGIN ERROR */
+
+.modern-login-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 15px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  background: #fff0f0;
+  border: 1px solid #ffd1d1;
+}
+
+.modern-login-error p {
+  margin: 0;
+  color: #a32c2c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   GOOGLE LOGIN
+   ========================================== */
+
+.modern-oauth-divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0 18px;
+  color: #aaa09c;
+}
+
+.modern-oauth-divider::before,
+.modern-oauth-divider::after {
+  content: "";
+  height: 1px;
+  background: #e7ded9;
+  flex: 1;
+}
+
+.modern-oauth-divider span {
+  padding: 0 13px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+.modern-google-button {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #ddd4cf;
+  border-radius: 11px;
+  background: white;
+  color: #3c302c;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  transition: 0.2s;
+}
+
+.modern-google-button:hover {
+  background: #faf7f5;
+  border-color: #c9bdb7;
+}
+
+.google-letter {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid #dedede;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4285f4;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+
+/* REGISTER LINK */
+
+.modern-register-prompt {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.modern-register-prompt span {
+  color: #837875;
+}
+
+.modern-register-prompt a {
+  margin-left: 5px;
+  color: #ff7300;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.modern-register-prompt a:hover {
+  text-decoration: underline;
+}
+
+
+/* SECURITY NOTE */
+
+.auth-security-note {
+  margin-top: 27px;
+  padding-top: 18px;
+  border-top: 1px solid #eee5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: #a09894;
+  font-size: 9px;
+}
+
+/* AUTH THEME TOGGLE */
+
+.modern-auth-theme {
+  position: fixed;
+  top: 20px;
+  right: 22px;
+  z-index: 50;
+}
+
+.modern-auth-theme .theme-toggle {
+  border-radius: 20px;
+  padding: 8px 13px;
+  font-size: 10px;
+}
+
+/* ==========================================
+   LOGIN DARK MODE
+   ========================================== */
+
+[data-theme="dark"] .modern-auth-page {
+  background: #171717;
+}
+
+[data-theme="dark"] .auth-form-panel {
+  background: #171717;
+}
+
+[data-theme="dark"] .auth-form-heading h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .auth-form-heading p {
+  color: #aaaaaa;
+}
+
+[data-theme="dark"] .modern-auth-field label {
+  color: #dddddd;
+}
+
+[data-theme="dark"] .auth-input-wrapper input {
+  background: #292929;
+  color: #ffffff;
+  border-color: #474747;
+}
+
+[data-theme="dark"] .auth-input-wrapper input::placeholder {
+  color: #858585;
+}
+
+[data-theme="dark"] .modern-google-button {
+  background: #292929;
+  color: #eeeeee;
+  border-color: #484848;
+}
+
+[data-theme="dark"] .modern-google-button:hover {
+  background: #333333;
+}
+
+[data-theme="dark"] .modern-oauth-divider::before,
+[data-theme="dark"] .modern-oauth-divider::after {
+  background: #414141;
+}
+
+[data-theme="dark"] .modern-register-prompt span {
+  color: #aaaaaa;
+}
+
+[data-theme="dark"] .auth-security-note {
+  color: #999999;
+  border-top-color: #3d3d3d;
+}
+
+[data-theme="dark"] .modern-login-error {
+  background: #3a2222;
+  border-color: #623333;
+}
+
+[data-theme="dark"] .modern-login-error p {
+  color: #ffaaaa;
+}
+
+/* ==========================================
+   LOGIN RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+  .modern-auth-page {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-brand-panel {
+    display: none;
+  }
+
+  .auth-form-panel {
+    min-height: 100vh;
+    padding: 70px 25px 35px;
+  }
+
+  .modern-login-card {
+    max-width: 430px;
+  }
+
+  .mobile-auth-logo {
+    display: block;
+    margin-bottom: 35px;
+    color: #4a0707;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  [data-theme="dark"] .mobile-auth-logo {
+    color: #ff8a20;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .auth-form-panel {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .auth-form-heading h2 {
+    font-size: 29px;
+  }
+
+  .modern-auth-theme {
+    top: 14px;
+    right: 14px;
+  }
+
+}
+
+/* ==========================================
+   MODERN REGISTER PAGE
+   ========================================== */
+
+.modern-register-success {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 15px;
+  padding: 11px 13px;
+  border-radius: 9px;
+  background: #edf8e5;
+  border: 1px solid #c9e5b7;
+}
+
+.modern-register-success > span {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #70a944;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.modern-register-success p {
+  margin: 0;
+  color: #416b25;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* LOGIN DIVIDER */
+
+.register-login-divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0 18px;
+  color: #aaa09c;
+}
+
+.register-login-divider::before,
+.register-login-divider::after {
+  content: "";
+  height: 1px;
+  background: #e7ded9;
+  flex: 1;
+}
+
+.register-login-divider span {
+  padding: 0 13px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+
+/* SIGN IN BUTTON */
+
+.modern-login-link-button {
+  width: 100%;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1px solid #ddd4cf;
+  border-radius: 11px;
+  background: white;
+  color: #4a0707;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+.modern-login-link-button:hover {
+  border-color: #ff7300;
+  color: #ff7300;
+  background: #fff9f4;
+}
+
+/* REGISTER DARK MODE */
+
+[data-theme="dark"] .modern-register-success {
+  background: #263520;
+  border-color: #415c34;
+}
+
+[data-theme="dark"] .modern-register-success p {
+  color: #b9dc9f;
+}
+
+[data-theme="dark"] .register-login-divider {
+  color: #888888;
+}
+
+[data-theme="dark"] .register-login-divider::before,
+[data-theme="dark"] .register-login-divider::after {
+  background: #414141;
+}
+
+[data-theme="dark"] .modern-login-link-button {
+  background: #292929;
+  color: #eeeeee;
+  border-color: #484848;
+}
+
+[data-theme="dark"] .modern-login-link-button:hover {
+  background: #333333;
+  color: #ff8a20;
+  border-color: #ff7300;
+}
+
+/* ==========================================
+   GOOGLE OAUTH TRANSITION PAGES
+   ========================================== */
+
+.oauth-loading-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #fff1e3,
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf5,
+      #f8eee8
+    );
+}
+
+
+.oauth-loading-card {
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+
+  padding: 45px 40px;
+
+  background: white;
+  border-radius: 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 45px
+    rgba(74, 7, 7, 0.1);
+}
+
+
+/* PETCARE LOGO */
+
+.oauth-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-bottom: 32px;
+
+  color: #4a0707;
+
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.oauth-logo span {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: #ff7300;
+
+  font-size: 19px;
+}
+
+
+/* LOADER */
+
+.oauth-loader {
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 22px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0df;
+
+  position: relative;
+}
+
+.oauth-loader::before {
+  content: "";
+
+  position: absolute;
+
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  border: 3px solid transparent;
+  border-top-color: #ff7300;
+
+  animation:
+    oauthSpin 1s linear infinite;
+}
+
+.oauth-loader-paw {
+  font-size: 31px;
+
+  animation:
+    oauthPulse 1.2s
+    ease-in-out infinite;
+}
+
+
+@keyframes oauthSpin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+@keyframes oauthPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+
+}
+
+
+/* TEXT */
+
+.oauth-loading-card h2 {
+  margin: 0 0 8px;
+
+  color: #2e211e;
+
+  font-size: 26px;
+}
+
+.oauth-loading-card > p {
+  margin: 0 auto;
+
+  max-width: 320px;
+
+  color: #817672;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.oauth-loading-card > small {
+  display: block;
+
+  margin-top: 25px;
+
+  color: #aaa19d;
+
+  font-size: 9px;
+}
+
+/* OAUTH PROGRESS */
+
+.oauth-progress {
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oauth-progress-step {
+  width: 120px;
+
+  color: #a59b97;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.oauth-progress-step span {
+  width: 28px;
+  height: 28px;
+
+  margin: 0 auto 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eee8e5;
+
+  color: #918783;
+
+  font-size: 10px;
+}
+
+.oauth-progress-step.active {
+  color: #6c4b3c;
+}
+
+.oauth-progress-step.active span {
+  background: #ff7300;
+  color: white;
+}
+
+
+.oauth-progress-line {
+  width: 55px;
+  height: 2px;
+
+  margin:
+    0 -15px 17px;
+
+  background: #e8dfdb;
+}
+
+.oauth-progress-line.active {
+  background: #ff7300;
+}
+
+/* OAUTH ERROR */
+
+.oauth-error-content {
+  text-align: center;
+}
+
+.oauth-error-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff0f0;
+
+  color: #c64242;
+
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.oauth-error-content h2 {
+  color: #332522;
+}
+
+.oauth-error-content p {
+  margin: 8px auto 22px;
+
+  max-width: 330px;
+
+  color: #8b7c77;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.oauth-login-button {
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 20px;
+
+  background: #ff7300;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.oauth-login-button:hover {
+  background: #e56700;
+  transform: translateY(-1px);
+}
+
+/* OAUTH DARK MODE */
+
+[data-theme="dark"] .oauth-loading-page {
+  background:
+    radial-gradient(
+      circle at top left,
+      #35251e,
+      transparent 35%
+    ),
+    #171717;
+}
+
+[data-theme="dark"] .oauth-loading-card {
+  background: #242424;
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .oauth-logo {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .oauth-loader {
+  background: #3b3027;
+}
+
+[data-theme="dark"] .oauth-loading-card h2,
+[data-theme="dark"] .oauth-error-content h2 {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .oauth-loading-card > p,
+[data-theme="dark"] .oauth-error-content p {
+  color: #b5adaa;
+}
+
+[data-theme="dark"] .oauth-loading-card > small {
+  color: #888888;
+}
+
+[data-theme="dark"] .oauth-progress-step {
+  color: #999999;
+}
+
+[data-theme="dark"] .oauth-progress-step.active {
+  color: #dddddd;
+}
+
+[data-theme="dark"] .oauth-progress-step span {
+  background: #3d3d3d;
+}
+
+[data-theme="dark"]
+.oauth-progress-step.active span {
+  background: #ff7300;
+}
+
+[data-theme="dark"] .oauth-progress-line {
+  background: #444444;
+}
+
+[data-theme="dark"]
+.oauth-progress-line.active {
+  background: #ff7300;
+}
+
+[data-theme="dark"] .oauth-error-icon {
+  background: #402525;
+  color: #ff9999;
+}
+
+/* OAUTH RESPONSIVE */
+
+@media (max-width: 500px) {
+
+  .oauth-loading-page {
+    padding: 18px;
+  }
+
+  .oauth-loading-card {
+    padding: 38px 22px;
+    border-radius: 18px;
+  }
+
+  .oauth-loading-card h2 {
+    font-size: 23px;
+  }
+
+  .oauth-progress-step {
+    width: 100px;
+    font-size: 8px;
+  }
+
+  .oauth-progress-line {
+    width: 35px;
+  }
+
+}

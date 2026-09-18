@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import PetCareLayout from "../components/PetCareLayout";
 
 import {
   getPets,
@@ -177,33 +178,75 @@ function Pets() {
   };
 
   return (
-    <div className="page-container">
 
-      <div className="page-header">
+    <PetCareLayout>
 
-        <div>
-          <h1>My Pets</h1>
-          <p>
-            Add and manage your pets.
-          </p>
-        </div>
+      <div className="modern-page">
 
-        <Link
-          className="back-link"
-          to="/dashboard"
-        >
-          Back to Dashboard
-        </Link>
+	  <div className="modern-page-header">
 
-      </div>
+	    <div>
 
-      <div className="pet-form-card">
+	      <span className="page-eyebrow">
+	        PET MANAGEMENT
+	      </span>
 
-        <h2>
-          {editingId
-            ? "Edit Pet"
-            : "Add Pet"}
-        </h2>
+	      <h1>
+	        My Pets 🐾
+	      </h1>
+
+	      <p>
+	        Add, manage and keep track of all your pets.
+	      </p>
+
+	    </div>
+
+
+	    <div className="pet-count-badge">
+
+	      <span>🐶</span>
+
+	      <div>
+
+	        <strong>
+	          {pets.length}
+	        </strong>
+
+	        <small>
+	          Total Pets
+	        </small>
+
+	      </div>
+
+	    </div>
+
+	  </div>
+
+	  <div className="modern-form-card">
+
+	    <div className="modern-card-heading">
+
+	      <div className="modern-card-icon">
+	        {editingId ? "✏️" : "🐾"}
+	      </div>
+
+	      <div>
+
+	        <h2>
+	          {editingId
+	            ? "Edit Pet"
+	            : "Add New Pet"}
+	        </h2>
+
+	        <p>
+	          {editingId
+	            ? "Update your pet's information."
+	            : "Enter your pet's information below."}
+	        </p>
+
+	      </div>
+
+	    </div>
 
         <form
           className="pet-form"
@@ -369,9 +412,25 @@ function Pets() {
 
       </div>
 
-      <h2 className="section-title">
-        Your Pets
-      </h2>
+	  <div className="pets-section-heading">
+
+	    <div>
+
+	      <span className="page-eyebrow">
+	        YOUR PET FAMILY
+	      </span>
+
+	      <h2>
+	        Your Pets
+	      </h2>
+
+	    </div>
+
+	    <span className="pets-result-count">
+	      {pets.length} {pets.length === 1 ? "pet" : "pets"}
+	    </span>
+
+	  </div>
 
       {pets.length === 0 ? (
 
@@ -386,17 +445,28 @@ function Pets() {
           {pets.map((pet) => (
 
             <div
-              className="pet-card"
+              className="pet-card modern-pet-card"
               key={pet.id}
             >
 
-              {pet.imageUrl && (
-                <img
-                  className="pet-image"
-                  src={pet.imageUrl}
-                  alt={pet.name}
-                />
-              )}
+			<div className="modern-pet-image">
+
+			  {pet.imageUrl ? (
+
+			    <img
+			      src={pet.imageUrl}
+			      alt={pet.name}
+			    />
+
+			  ) : (
+
+			    <div className="modern-pet-placeholder">
+			      🐾
+			    </div>
+
+			  )}
+
+			</div>  
 
               <h2>{pet.name}</h2>
 
@@ -499,6 +569,7 @@ function Pets() {
       )}
 
     </div>
+	</PetCareLayout>
   );
 }
 

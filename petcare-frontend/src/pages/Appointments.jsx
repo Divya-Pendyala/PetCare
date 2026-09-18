@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import PetCareLayout from "../components/PetCareLayout";
 import { getPet } from "../services/petService";
 
 import {
@@ -175,36 +175,118 @@ function Appointments() {
   };
 
   return (
-    <div className="page-container">
+	<PetCareLayout>
 
-      <div className="page-header">
+	    <div className="modern-page">
 
-        <div>
-          <h1>Veterinary Appointments</h1>
+		<div className="modern-page-header">
 
-          <p>
-            {pet
-              ? `Manage veterinary appointments for ${pet.name}.`
-              : "Manage veterinary appointments."}
-          </p>
-        </div>
+		  <div>
 
-        <Link
-          to="/pets"
-          className="back-link"
-        >
-          Back to My Pets
-        </Link>
+		    <span className="page-eyebrow">
+		      APPOINTMENT MANAGEMENT
+		    </span>
 
-      </div>
+		    <h1>
+		      Veterinary Appointments 📅
+		    </h1>
 
-      <div className="record-form-card">
+		    <p>
+		      {pet
+		        ? `Schedule and manage veterinary visits for ${pet.name}.`
+		        : "Schedule and manage veterinary visits."}
+		    </p>
 
-        <h2>
-          {editingId
-            ? "Edit Appointment"
-            : "Add Appointment"}
-        </h2>
+		  </div>
+
+
+		  <Link
+		    to="/pets"
+		    className="modern-back-button"
+		  >
+		    ← My Pets
+		  </Link>
+
+		</div>
+		
+		{pet && (
+
+		  <div className="appointment-pet-banner">
+
+		    <div className="appointment-pet-avatar">
+
+		      {pet.imageUrl ? (
+
+		        <img
+		          src={pet.imageUrl}
+		          alt={pet.name}
+		        />
+
+		      ) : (
+
+		        <span>🐾</span>
+
+		      )}
+
+		    </div>
+
+		    <div>
+
+		      <span className="pet-banner-label">
+		        MANAGING APPOINTMENTS FOR
+		      </span>
+
+		      <h3>
+		        {pet.name}
+		      </h3>
+
+		      <p>
+		        {pet.breed || pet.species || "Pet"}
+		      </p>
+
+		    </div>
+
+		    <div className="appointment-total">
+
+		      <strong>
+		        {appointments.length}
+		      </strong>
+
+		      <span>
+		        Appointments
+		      </span>
+
+		    </div>
+
+		  </div>
+
+		)}
+
+		<div className="record-form-card modern-appointment-form">
+
+		  <div className="modern-card-heading">
+
+		    <div className="modern-card-icon appointment-form-icon">
+		      {editingId ? "✏️" : "📅"}
+		    </div>
+
+		    <div>
+
+		      <h2>
+		        {editingId
+		          ? "Edit Appointment"
+		          : "Schedule Appointment"}
+		      </h2>
+
+		      <p>
+		        {editingId
+		          ? "Update the veterinary appointment details."
+		          : "Enter the veterinary appointment details below."}
+		      </p>
+
+		    </div>
+
+		  </div>
 
         <form
           className="record-form"
@@ -305,11 +387,14 @@ function Appointments() {
 
           <div className="form-buttons full-width">
 
-            <button type="submit">
-              {editingId
-                ? "Update Appointment"
-                : "Add Appointment"}
-            </button>
+		  <button
+		    type="submit"
+		    className="appointment-submit-button"
+		  >
+		    {editingId
+		      ? "✓ Update Appointment"
+		      : "📅 Schedule Appointment"}
+		  </button>
 
             {editingId && (
               <button
@@ -339,9 +424,31 @@ function Appointments() {
 
       </div>
 
-      <h2 className="section-title">
-        Appointment Records
-      </h2>
+	  <div className="records-section-heading">
+
+	    <div>
+
+	      <span className="page-eyebrow">
+	        VETERINARY VISITS
+	      </span>
+
+	      <h2>
+	        Appointment Records
+	      </h2>
+
+	    </div>
+
+	    <span className="appointment-count-badge">
+
+	      {appointments.length}{" "}
+
+	      {appointments.length === 1
+	        ? "appointment"
+	        : "appointments"}
+
+	    </span>
+
+	  </div>
 
       {appointments.length === 0 ? (
 
@@ -355,41 +462,115 @@ function Appointments() {
 
           {appointments.map((appointment) => (
 
-            <div
-              className="record-card"
-              key={appointment.id}
-            >
+			<div
+			  className="record-card modern-appointment-card"
+			  key={appointment.id}
+			>
 
-              <h3>
-                {appointment.reason}
-              </h3>
+			  <div className="appointment-card-top">
 
-              <p>
-                <strong>Date:</strong>{" "}
-                {appointment.appointmentDate}
-              </p>
+			    <div className="large-appointment-date">
 
-              <p>
-                <strong>Time:</strong>{" "}
-                {appointment.appointmentTime}
-              </p>
+			      <strong>
 
-              <p>
-                <strong>Status:</strong>{" "}
-                {appointment.status}
-              </p>
+			        {appointment.appointmentDate
+			          ? new Date(
+			              appointment.appointmentDate +
+			              "T00:00:00"
+			            ).getDate()
+			          : "--"}
 
-              <p>
-                <strong>Veterinarian:</strong>{" "}
-                {appointment.veterinarian ||
-                  "Not provided"}
-              </p>
+			      </strong>
 
-              <p>
-                <strong>Clinic:</strong>{" "}
-                {appointment.clinicName ||
-                  "Not provided"}
-              </p>
+			      <span>
+
+			        {appointment.appointmentDate
+			          ? new Date(
+			              appointment.appointmentDate +
+			              "T00:00:00"
+			            )
+			              .toLocaleString(
+			                "default",
+			                { month: "short" }
+			              )
+			              .toUpperCase()
+			          : "DATE"}
+
+			      </span>
+
+			    </div>
+
+
+			    <div className="appointment-title-area">
+
+			      <h3>
+			        {appointment.reason}
+			      </h3>
+
+			      <span
+			        className={
+			          `appointment-status ${
+			            appointment.status?.toLowerCase()
+			          }`
+			        }
+			      >
+			        {appointment.status}
+			      </span>
+
+			    </div>
+
+			  </div>
+
+			  <div className="appointment-detail">
+
+			    <span>🕐</span>
+
+			    <div>
+
+			      <small>TIME</small>
+
+			      <strong>
+			        {appointment.appointmentTime ||
+			          "Not provided"}
+			      </strong>
+
+			    </div>
+
+			  </div>
+
+			  <div className="appointment-detail">
+
+			    <span>👨‍⚕️</span>
+
+			    <div>
+
+			      <small>VETERINARIAN</small>
+
+			      <strong>
+			        {appointment.veterinarian ||
+			          "Not provided"}
+			      </strong>
+
+			    </div>
+
+			  </div>
+
+			  <div className="appointment-detail">
+
+			    <span>🏥</span>
+
+			    <div>
+
+			      <small>CLINIC</small>
+
+			      <strong>
+			        {appointment.clinicName ||
+			          "Not provided"}
+			      </strong>
+
+			    </div>
+
+			  </div>
 
               {appointment.notes && (
                 <p>
@@ -429,6 +610,7 @@ function Appointments() {
       )}
 
     </div>
+	</PetCareLayout>
   );
 }
 

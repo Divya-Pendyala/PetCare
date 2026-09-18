@@ -54,74 +54,337 @@ function Register() {
   };
 
   return (
-	<div className="auth-container">
 
-	   <div className="auth-theme-toggle">
-	     <ThemeToggle />
-	   </div>
+    <div className="modern-auth-page">
 
-	   <div className="auth-card">
+      {/* THEME TOGGLE */}
 
-        <h1>PetCare</h1>
-        <h2>Create Account</h2>
+      <div className="modern-auth-theme">
+        <ThemeToggle />
+      </div>
 
-        <form onSubmit={handleSubmit}>
 
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-          />
+      {/* LEFT BRANDING PANEL */}
 
-          <label>Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-          />
+      <div className="auth-brand-panel">
 
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="Enter your password"
-          />
+        <div className="auth-brand-content">
 
-          <button type="submit">
-            Register
-          </button>
+          <Link
+            to="/"
+            className="auth-brand-logo"
+          >
+            <span className="auth-logo-icon">
+              🐾
+            </span>
 
-        </form>
-
-        {message && (
-          <p className="success-message">
-            {message}
-          </p>
-        )}
-
-        {error && (
-          <p className="error-message">
-            {error}
-          </p>
-        )}
-
-        <p>
-          Already have an account?{" "}
-          <Link to="/login">
-            Login
+            <span>
+              PETCARE
+            </span>
           </Link>
-        </p>
+
+
+          <div className="auth-brand-message">
+
+            <span className="auth-brand-eyebrow">
+              START YOUR PETCARE JOURNEY
+            </span>
+
+            <h1>
+              Better care starts
+              <br />
+              with being
+              <br />
+              <span>organized.</span>
+            </h1>
+
+            <p>
+              Create your PetCare account and keep your
+              pet's health information, appointments,
+              vaccinations and reminders together.
+            </p>
+
+          </div>
+
+
+          <div className="auth-feature-list">
+
+            <div className="auth-feature-item">
+
+              <div className="auth-feature-icon">
+                🐶
+              </div>
+
+              <div>
+                <strong>Pet Profiles</strong>
+                <span>
+                  Create and manage profiles for your pets.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div className="auth-feature-item">
+
+              <div className="auth-feature-icon">
+                💉
+              </div>
+
+              <div>
+                <strong>Vaccinations</strong>
+                <span>
+                  Track vaccines and upcoming due dates.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div className="auth-feature-item">
+
+              <div className="auth-feature-icon">
+                📅
+              </div>
+
+              <div>
+                <strong>Appointments</strong>
+                <span>
+                  Organize veterinary appointments.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div className="auth-feature-item">
+
+              <div className="auth-feature-icon">
+                🔔
+              </div>
+
+              <div>
+                <strong>Care Reminders</strong>
+                <span>
+                  Keep important pet-care tasks on schedule.
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div className="auth-decoration auth-decoration-one">
+          🐾
+        </div>
+
+        <div className="auth-decoration auth-decoration-two">
+          🐾
+        </div>
+
+      </div>
+
+
+      {/* RIGHT REGISTRATION PANEL */}
+
+      <div className="auth-form-panel">
+
+        <div className="modern-login-card">
+
+          <div className="mobile-auth-logo">
+            🐾 PETCARE
+          </div>
+
+
+          <div className="auth-form-heading">
+
+            <span className="auth-form-eyebrow">
+              JOIN PETCARE
+            </span>
+
+            <h2>
+              Create your account
+            </h2>
+
+            <p>
+              Enter your information below to start
+              managing your pet's care.
+            </p>
+
+          </div>
+
+
+          <form
+            className="modern-login-form"
+            onSubmit={handleSubmit}
+          >
+
+            {/* NAME */}
+
+            <div className="modern-auth-field">
+
+              <label htmlFor="register-name">
+                Full Name
+              </label>
+
+              <div className="auth-input-wrapper">
+
+                <span className="auth-input-icon">
+                  👤
+                </span>
+
+                <input
+                  id="register-name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your full name"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* EMAIL */}
+
+            <div className="modern-auth-field">
+
+              <label htmlFor="register-email">
+                Email Address
+              </label>
+
+              <div className="auth-input-wrapper">
+
+                <span className="auth-input-icon">
+                  ✉️
+                </span>
+
+                <input
+                  id="register-email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* PASSWORD */}
+
+            <div className="modern-auth-field">
+
+              <label htmlFor="register-password">
+                Password
+              </label>
+
+              <div className="auth-input-wrapper">
+
+                <span className="auth-input-icon">
+                  🔒
+                </span>
+
+                <input
+                  id="register-password"
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  placeholder="Create a password"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* SUCCESS MESSAGE */}
+
+            {message && (
+
+              <div className="modern-register-success">
+
+                <span>✓</span>
+
+                <p>
+                  {message}
+                </p>
+
+              </div>
+
+            )}
+
+
+            {/* ERROR MESSAGE */}
+
+            {error && (
+
+              <div className="modern-login-error">
+
+                <span>⚠️</span>
+
+                <p>
+                  {error}
+                </p>
+
+              </div>
+
+            )}
+
+
+            <button
+              type="submit"
+              className="modern-login-button"
+            >
+              Create Account
+              <span>→</span>
+            </button>
+
+          </form>
+
+
+          <div className="register-login-divider">
+            <span>
+              ALREADY REGISTERED?
+            </span>
+          </div>
+
+
+          <Link
+            to="/login"
+            className="modern-login-link-button"
+          >
+            Sign In to Your Account
+          </Link>
+
+
+          <div className="auth-security-note">
+
+            <span>🔒</span>
+
+            <span>
+              Your account information is securely protected.
+            </span>
+
+          </div>
+
+        </div>
 
       </div>
 
     </div>
+
   );
 }
 

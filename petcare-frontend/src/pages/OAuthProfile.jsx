@@ -54,15 +54,105 @@ function OAuthProfile() {
   }, [navigate]);
 
   return (
-    <div className="page-container">
-      <h2>PetCare</h2>
 
-	  {error ? (
-	          <p>{error}</p>
-	        ) : (
-	          <p>Loading your Google profile...</p>
-	        )}
+    <div className="oauth-loading-page">
+
+      <div className="oauth-loading-card">
+
+        <div className="oauth-logo">
+          <span>🐾</span>
+          PETCARE
+        </div>
+
+
+        {error ? (
+
+          <div className="oauth-error-content">
+
+            <div className="oauth-error-icon">
+              !
+            </div>
+
+            <h2>
+              Unable to load your profile
+            </h2>
+
+            <p>
+              {error}
+            </p>
+
+            <button
+              type="button"
+              className="oauth-login-button"
+              onClick={() =>
+                navigate("/login")
+              }
+            >
+              ← Return to Login
+            </button>
+
+          </div>
+
+        ) : (
+
+          <>
+
+            <div className="oauth-loader">
+
+              <div className="oauth-loader-paw">
+                🐾
+              </div>
+
+            </div>
+
+
+            <h2>
+              Almost there!
+            </h2>
+
+            <p>
+              Your Google account is connected.
+              We're loading your PetCare profile.
+            </p>
+
+
+            <div className="oauth-progress">
+
+              <div className="oauth-progress-step active">
+
+                <span>✓</span>
+
+                Google authentication
+
+              </div>
+
+
+              <div className="oauth-progress-line active"></div>
+
+
+              <div className="oauth-progress-step active">
+
+                <span>✓</span>
+
+                Loading profile
+
+              </div>
+
+            </div>
+
+
+            <small>
+              Taking you to your dashboard...
+            </small>
+
+          </>
+
+        )}
+
+      </div>
+
     </div>
+
   );
 }
 

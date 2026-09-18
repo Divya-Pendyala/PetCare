@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import PetCareLayout from "../components/PetCareLayout";
 import { getPet } from "../services/petService";
 
 import {
@@ -175,34 +175,121 @@ function Vaccinations() {
   };
 
   return (
-    <div className="page-container">
+	<PetCareLayout>
 
-      <div className="page-header">
-        <div>
-          <h1>Vaccinations</h1>
+	    <div className="modern-page">
 
-          <p>
-            {pet
-              ? `Manage vaccination records for ${pet.name}.`
-              : "Manage vaccination records."}
-          </p>
-        </div>
+		<div className="modern-page-header">
 
-        <Link
-          to="/pets"
-          className="back-link"
-        >
-          Back to My Pets
-        </Link>
-      </div>
+		  <div>
 
-      <div className="record-form-card">
+		    <span className="page-eyebrow">
+		      VACCINATION MANAGEMENT
+		    </span>
 
-        <h2>
-          {editingId
-            ? "Edit Vaccination"
-            : "Add Vaccination"}
-        </h2>
+		    <h1>
+		      Vaccinations 💉
+		    </h1>
+
+		    <p>
+		      {pet
+		        ? `Track and manage vaccination records for ${pet.name}.`
+		        : "Track and manage your pet's vaccination records."}
+		    </p>
+
+		  </div>
+
+		  <Link
+		    to="/pets"
+		    className="modern-back-button vaccination-back-button"
+		  >
+		    ← My Pets
+		  </Link>
+
+		</div>
+		
+		{pet && (
+
+		  <div className="vaccination-pet-banner">
+
+		    <div className="vaccination-pet-avatar">
+
+		      {pet.imageUrl ? (
+
+		        <img
+		          src={pet.imageUrl}
+		          alt={pet.name}
+		        />
+
+		      ) : (
+
+		        <span>🐾</span>
+
+		      )}
+
+		    </div>
+
+
+		    <div>
+
+		      <span className="vaccination-banner-label">
+		        VACCINATION RECORDS FOR
+		      </span>
+
+		      <h3>
+		        {pet.name}
+		      </h3>
+
+		      <p>
+		        {pet.breed || pet.species || "Pet"}
+		      </p>
+
+		    </div>
+
+
+		    <div className="vaccination-total">
+
+		      <strong>
+		        {vaccinations.length}
+		      </strong>
+
+		      <span>
+		        Vaccinations
+		      </span>
+
+		    </div>
+
+		  </div>
+
+		)}
+
+		<div className="record-form-card modern-vaccination-form">
+
+		  <div className="modern-card-heading">
+
+		    <div className="modern-card-icon vaccination-form-icon">
+
+		      {editingId ? "✏️" : "💉"}
+
+		    </div>
+
+		    <div>
+
+		      <h2>
+		        {editingId
+		          ? "Edit Vaccination"
+		          : "Add Vaccination Record"}
+		      </h2>
+
+		      <p>
+		        {editingId
+		          ? "Update the vaccination information."
+		          : "Enter the vaccination details below."}
+		      </p>
+
+		    </div>
+
+		  </div>
 
         <form
           className="record-form"
@@ -281,11 +368,14 @@ function Vaccinations() {
 
           <div className="form-buttons full-width">
 
-            <button type="submit">
-              {editingId
-                ? "Update Vaccination"
-                : "Add Vaccination"}
-            </button>
+		  <button
+		    type="submit"
+		    className="vaccination-submit-button"
+		  >
+		    {editingId
+		      ? "✓ Update Vaccination"
+		      : "💉 Add Vaccination"}
+		  </button>
 
             {editingId && (
               <button
@@ -314,9 +404,32 @@ function Vaccinations() {
 
       </div>
 
-      <h2 className="section-title">
-        Vaccination Records
-      </h2>
+	  <div className="records-section-heading">
+
+	    <div>
+
+	      <span className="page-eyebrow">
+	        VACCINE HISTORY
+	      </span>
+
+	      <h2>
+	        Vaccination Records
+	      </h2>
+
+	    </div>
+
+
+	    <span className="vaccination-count-badge">
+
+	      {vaccinations.length}{" "}
+
+	      {vaccinations.length === 1
+	        ? "vaccination"
+	        : "vaccinations"}
+
+	    </span>
+
+	  </div>
 
       {vaccinations.length === 0 ? (
 
@@ -328,39 +441,96 @@ function Vaccinations() {
 
         <div className="records-grid">
 
-          {vaccinations.map((vaccination) => (
+		{vaccinations.map((vaccination) => (
 
-            <div
-              className="record-card"
-              key={vaccination.id}
-            >
+		  <div
+		    className="record-card modern-vaccination-card"
+		    key={vaccination.id}
+		  >
 
-              <h3>
-                {vaccination.vaccineName}
-              </h3>
+		    <div className="vaccination-card-top">
 
-              <p>
-                <strong>Date Given:</strong>{" "}
-                {vaccination.dateGiven}
-              </p>
+		      <div className="vaccine-icon-large">
+		        💉
+		      </div>
 
-              <p>
-                <strong>Next Due:</strong>{" "}
-                {vaccination.nextDueDate ||
-                  "Not provided"}
-              </p>
+		      <div className="vaccination-title-area">
 
-              <p>
-                <strong>Veterinarian:</strong>{" "}
-                {vaccination.veterinarian ||
-                  "Not provided"}
-              </p>
+		        <span className="vaccination-small-label">
+		          VACCINE
+		        </span>
 
-              <p>
-                <strong>Clinic:</strong>{" "}
-                {vaccination.clinicName ||
-                  "Not provided"}
-              </p>
+		        <h3>
+		          {vaccination.vaccineName}
+		        </h3>
+
+		      </div>
+
+		    </div>
+
+			<div className="vaccination-detail">
+
+			  <span>📅</span>
+
+			  <div>
+
+			    <small>DATE GIVEN</small>
+
+			    <strong>
+			      {vaccination.dateGiven || "Not provided"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="vaccination-detail due-date-detail">
+
+			  <span>⏰</span>
+
+			  <div>
+
+			    <small>NEXT DUE DATE</small>
+
+			    <strong>
+			      {vaccination.nextDueDate || "Not scheduled"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="vaccination-detail">
+
+			  <span>👨‍⚕️</span>
+
+			  <div>
+
+			    <small>VETERINARIAN</small>
+
+			    <strong>
+			      {vaccination.veterinarian || "Not provided"}
+			    </strong>
+
+			  </div>
+
+			</div>  
+
+			<div className="vaccination-detail">
+
+			  <span>🏥</span>
+
+			  <div>
+
+			    <small>CLINIC</small>
+
+			    <strong>
+			      {vaccination.clinicName || "Not provided"}
+			    </strong>
+
+			  </div>
+
+			</div>              
 
               {vaccination.notes && (
                 <p>
@@ -401,6 +571,7 @@ function Vaccinations() {
       )}
 
     </div>
+	</PetCareLayout>
   );
 }
 

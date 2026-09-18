@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-
+import PetCareLayout from "../components/PetCareLayout";
 import { getPet } from "../services/petService";
 
 import {
@@ -194,36 +194,117 @@ function HealthRecords() {
   };
 
   return (
-    <div className="page-container">
+	<PetCareLayout>
 
-      <div className="page-header">
+	    <div className="modern-page">
 
-        <div>
-          <h1>Health Records</h1>
+		<div className="modern-page-header">
 
-          <p>
-            {pet
-              ? `Manage health records for ${pet.name}.`
-              : "Manage pet health records."}
-          </p>
-        </div>
+		  <div>
 
-        <Link
-          to="/pets"
-          className="back-link"
-        >
-          Back to My Pets
-        </Link>
+		    <span className="page-eyebrow">
+		      HEALTH MANAGEMENT
+		    </span>
 
-      </div>
+		    <h1>
+		      Health Records ❤️
+		    </h1>
 
-      <div className="record-form-card">
+		    <p>
+		      {pet
+		        ? `Track medical history and health information for ${pet.name}.`
+		        : "Track your pet's medical history and health information."}
+		    </p>
 
-        <h2>
-          {editingId
-            ? "Edit Health Record"
-            : "Add Health Record"}
-        </h2>
+		  </div>
+
+		  <Link
+		    to="/pets"
+		    className="modern-back-button health-back-button"
+		  >
+		    ← My Pets
+		  </Link>
+
+		</div>
+		
+		{pet && (
+
+		  <div className="health-pet-banner">
+
+		    <div className="health-pet-avatar">
+
+		      {pet.imageUrl ? (
+
+		        <img
+		          src={pet.imageUrl}
+		          alt={pet.name}
+		        />
+
+		      ) : (
+
+		        <span>🐾</span>
+
+		      )}
+
+		    </div>
+
+		    <div>
+
+		      <span className="health-banner-label">
+		        HEALTH RECORDS FOR
+		      </span>
+
+		      <h3>
+		        {pet.name}
+		      </h3>
+
+		      <p>
+		        {pet.breed || pet.species || "Pet"}
+		      </p>
+
+		    </div>
+
+		    <div className="health-total">
+
+		      <strong>
+		        {healthRecords.length}
+		      </strong>
+
+		      <span>
+		        Health Records
+		      </span>
+
+		    </div>
+
+		  </div>
+
+		)}
+
+		<div className="record-form-card modern-health-form">
+
+		  <div className="modern-card-heading">
+
+		    <div className="modern-card-icon health-form-icon">
+		      {editingId ? "✏️" : "❤️"}
+		    </div>
+
+		    <div>
+
+		      <h2>
+		        {editingId
+		          ? "Edit Health Record"
+		          : "Add Health Record"}
+		      </h2>
+
+		      <p>
+		        {editingId
+		          ? "Update this medical record."
+		          : "Record your pet's medical and health information."}
+		      </p>
+
+		    </div>
+
+		  </div>
 
         <form
           className="record-form"
@@ -317,11 +398,14 @@ function HealthRecords() {
 
           <div className="form-buttons full-width">
 
-            <button type="submit">
-              {editingId
-                ? "Update Health Record"
-                : "Add Health Record"}
-            </button>
+		  <button
+		    type="submit"
+		    className="health-submit-button"
+		  >
+		    {editingId
+		      ? "✓ Update Health Record"
+		      : "❤️ Add Health Record"}
+		  </button>
 
             {editingId && (
               <button
@@ -351,9 +435,31 @@ function HealthRecords() {
 
       </div>
 
-      <h2 className="section-title">
-        Health Record History
-      </h2>
+	  <div className="records-section-heading">
+
+	    <div>
+
+	      <span className="page-eyebrow">
+	        MEDICAL HISTORY
+	      </span>
+
+	      <h2>
+	        Health Records
+	      </h2>
+
+	    </div>
+
+	    <span className="health-count-badge">
+
+	      {healthRecords.length}{" "}
+
+	      {healthRecords.length === 1
+	        ? "record"
+	        : "records"}
+
+	    </span>
+
+	  </div>
 
       {healthRecords.length === 0 ? (
 
@@ -367,43 +473,98 @@ function HealthRecords() {
 
           {healthRecords.map((record) => (
 
-            <div
-              className="record-card"
-              key={record.id}
-            >
+		  <div
+		    className="record-card modern-health-card"
+		    key={record.id}
+		  >
 
-              <h3>
-                {record.diagnosis}
-              </h3>
+		    <div className="health-card-top">
 
-              <p>
-                <strong>Date:</strong>{" "}
-                {record.recordDate}
-              </p>
+		      <div className="health-icon-large">
+		        ❤️
+		      </div>
 
-              <p>
-                <strong>Symptoms:</strong>{" "}
-                {record.symptoms ||
-                  "Not provided"}
-              </p>
+		      <div className="health-title-area">
 
-              <p>
-                <strong>Treatment:</strong>{" "}
-                {record.treatment ||
-                  "Not provided"}
-              </p>
+		        <span className="health-small-label">
+		          DIAGNOSIS
+		        </span>
 
-              <p>
-                <strong>Medication:</strong>{" "}
-                {record.medication ||
-                  "Not provided"}
-              </p>
+		        <h3>
+		          {record.diagnosis || "General Health Record"}
+		        </h3>
 
-              <p>
-                <strong>Veterinarian:</strong>{" "}
-                {record.veterinarian ||
-                  "Not provided"}
-              </p>
+		        <span className="health-record-date">
+		          📅 {record.recordDate || "No date"}
+		        </span>
+
+		      </div>
+
+		    </div>
+
+			<div className="health-detail">
+
+			  <span>🩺</span>
+
+			  <div>
+
+			    <small>SYMPTOMS</small>
+
+			    <strong>
+			      {record.symptoms || "None recorded"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="health-detail">
+
+			  <span>🏥</span>
+
+			  <div>
+
+			    <small>TREATMENT</small>
+
+			    <strong>
+			      {record.treatment || "No treatment recorded"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="health-detail medication-detail">
+
+			  <span>💊</span>
+
+			  <div>
+
+			    <small>MEDICATION</small>
+
+			    <strong>
+			      {record.medication || "No medication"}
+			    </strong>
+
+			  </div>
+
+			</div>
+
+			<div className="health-detail">
+
+			  <span>👨‍⚕️</span>
+
+			  <div>
+
+			    <small>VETERINARIAN</small>
+
+			    <strong>
+			      {record.veterinarian || "Not provided"}
+			    </strong>
+
+			  </div>
+
+			</div>
 
               {record.notes && (
                 <p>
@@ -441,6 +602,7 @@ function HealthRecords() {
       )}
 
     </div>
+	</PetCareLayout>
   );
 }
 

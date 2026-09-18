@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import PetCareLayout from "../components/PetCareLayout";
 import {
   getProfile,
   updateProfile,
@@ -131,108 +131,238 @@ function Profile() {
 
   if (loading) {
     return (
-      <div className="page-container">
-        <p>Loading profile...</p>
-      </div>
+
+      <PetCareLayout>
+
+        <div className="profile-loading">
+
+          <div className="profile-loading-icon">
+            👤
+          </div>
+
+          <h3>Loading Profile</h3>
+
+          <p>
+            Getting your PetCare account information...
+          </p>
+
+        </div>
+
+      </PetCareLayout>
+
     );
   }
 
   return (
-    <div className="page-container">
+	<PetCareLayout>
 
-      <div className="page-header">
+	   <div className="modern-page">
 
-        <div>
-          <h1>My Profile</h1>
+	   <div className="modern-page-header">
 
-          <p>
-            View and update your PetCare account.
-          </p>
-        </div>
+	     <div>
 
-        <Link
-          to="/dashboard"
-          className="back-link"
-        >
-          Back to Dashboard
-        </Link>
+	       <span className="page-eyebrow">
+	         ACCOUNT SETTINGS
+	       </span>
 
-      </div>
+	       <h1>
+	         My Profile 👤
+	       </h1>
 
-      <div className="profile-layout">
+	       <p>
+	         View and manage your PetCare account information.
+	       </p>
 
-        <div className="profile-preview">
+	     </div>
 
-          {formData.profileImage ? (
+	     <Link
+	       to="/dashboard"
+	       className="modern-back-button profile-back-button"
+	     >
+	       ← Dashboard
+	     </Link>
 
-            <img
-              src={formData.profileImage}
-              alt={formData.name}
-              className="profile-image"
-            />
+	   </div>
 
-          ) : (
+	   <div className="profile-layout modern-profile-layout">
 
-            <div className="profile-placeholder">
-              {formData.name
-                ? formData.name
-                    .charAt(0)
-                    .toUpperCase()
-                : "U"}
-            </div>
+	   <div className="profile-preview modern-profile-preview">
 
-          )}
+	     <div className="profile-cover">
 
-          <h2>
-            {formData.name || "PetCare User"}
-          </h2>
+	       <span>🐾</span>
 
-          <p>{formData.email}</p>
+	     </div>
 
-        </div>
 
-        <div className="profile-form-card">
+	     <div className="modern-profile-photo">
 
-          <h2>Edit Profile</h2>
+	       {formData.profileImage ? (
+
+	         <img
+	           src={formData.profileImage}
+	           alt={formData.name}
+	         />
+
+	       ) : (
+
+	         <div className="modern-profile-placeholder">
+
+	           {formData.name
+	             ? formData.name
+	                 .charAt(0)
+	                 .toUpperCase()
+	             : "U"}
+
+	         </div>
+
+	       )}
+
+	     </div>
+
+
+	     <h2>
+	       {formData.name || "PetCare User"}
+	     </h2>
+
+	     <p className="profile-email">
+	       {formData.email}
+	     </p>
+
+
+	     <span className="profile-member-badge">
+	       🐾 PetCare Member
+	     </span>
+
+
+	     <div className="profile-info-divider"></div>
+
+
+	     <div className="profile-info-row">
+
+	       <span>👤</span>
+
+	       <div>
+
+	         <small>ACCOUNT NAME</small>
+
+	         <strong>
+	           {formData.name || "Not provided"}
+	         </strong>
+
+	       </div>
+
+	     </div>
+
+
+	     <div className="profile-info-row">
+
+	       <span>✉️</span>
+
+	       <div>
+
+	         <small>EMAIL ADDRESS</small>
+
+	         <strong>
+	           {formData.email || "Not provided"}
+	         </strong>
+
+	       </div>
+
+	     </div>
+
+	   </div>
+
+	   <div className="profile-form-card modern-profile-form-card">
+
+	     <div className="modern-card-heading">
+
+	       <div className="modern-card-icon profile-form-icon">
+	         ✏️
+	       </div>
+
+	       <div>
+
+	         <h2>
+	           Edit Profile
+	         </h2>
+
+	         <p>
+	           Update your personal PetCare account information.
+	         </p>
+
+	       </div>
+
+	     </div>
 
           <form
             className="profile-form"
             onSubmit={handleSubmit}
           >
 
-            <label>Name *</label>
+		  <div className="profile-field">
 
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your name"
-            />
+		    <label>
+		      👤 Full Name *
+		    </label>
 
-            <label>Email *</label>
+		    <input
+		      type="text"
+		      name="name"
+		      value={formData.name}
+		      onChange={handleChange}
+		      placeholder="Enter your name"
+		    />
 
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your email"
-            />
+		  </div>
 
-            <label>Profile Image URL</label>
+		  <div className="profile-field">
 
-            <input
-              type="text"
-              name="profileImage"
-              value={formData.profileImage}
-              onChange={handleChange}
-              placeholder="Optional image URL"
-            />
+		    <label>
+		      ✉️ Email Address *
+		    </label>
 
-            <button type="submit">
-              Update Profile
-            </button>
+		    <input
+		      type="email"
+		      name="email"
+		      value={formData.email}
+		      onChange={handleChange}
+		      placeholder="Enter your email"
+		    />
+
+		    <small className="profile-field-warning">
+		      Changing your email will require you to log in again.
+		    </small>
+
+		  </div> 
+
+		  <div className="profile-field">
+
+		    <label>
+		      🖼️ Profile Image URL
+		    </label>
+
+		    <input
+		      type="text"
+		      name="profileImage"
+		      value={formData.profileImage}
+		      onChange={handleChange}
+		      placeholder="Enter an optional image URL"
+		    />
+
+		    <small className="profile-field-help">
+		      Leave this empty to use your initial as the profile picture.
+		    </small>
+
+		  </div>
+
+		  <button
+		    type="submit"
+		    className="profile-submit-button"
+		  >
+		    ✓ Save Profile Changes
+		  </button>
 
           </form>
 
@@ -253,6 +383,7 @@ function Profile() {
       </div>
 
     </div>
+	</PetCareLayout>
   );
 }
 
